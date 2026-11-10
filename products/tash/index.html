@@ -1,1 +1,54 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TASH — Orb Corporation</title><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script></head><body><div data-site-header></div><main><section class="page-hero container"><p class="eyebrow">LOCAL-NETWORK TASK SHARING</p><div class="product-wordmark">TASH<span>.</span></div><p class="lead">An experiment in making connected devices useful together — sharing tasks across devices on the same network.</p><div class="actions"><a class="button button-dark" href="https://github.com/YunaBugendai/TASH" target="_blank" rel="noopener">View source on GitHub <span>↗</span></a></div><p class="small-note">Project status: development / experimental. Capabilities depend on the current repository version.</p></section><section class="section section-soft"><div class="container detail-grid"><div><p class="eyebrow">THE IDEA</p><h2>Devices can<br>work together.</h2></div><div><p>TASH explores local-network task sharing: a group of devices connected to the same network could contribute resources to suitable tasks.</p><p>The project explores distributed work, device discovery and practical collaboration across a local network. It should not be considered a production-ready distributed computing platform unless a specific release says so.</p></div></div></section><section class="section container"><p class="eyebrow">PROJECT LINKS</p><div class="link-list"><a href="https://github.com/YunaBugendai/TASH" target="_blank" rel="noopener"><span><b>GitHub repository</b><small>Source code and development history</small></span><span>↗</span></a><a href="/products/"><span><b>Other products</b><small>Explore more from Orb Corporation</small></span><span>→</span></a></div></section></main><div data-site-footer></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="TASH is an experimental, consent-based local-network distributed computing app with a Master and Worker architecture.">
+  <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
+  <meta property="og:title" content="TASH — Orb Corporation"><meta property="og:description" content="A local network. Connected devices. Explicit consent.">
+  <meta name="twitter:card" content="summary"><title>TASH — Orb Corporation</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a><div data-site-header></div>
+  <main id="main-content">
+    <section class="page-hero container">
+      <p class="eyebrow">LOCAL-NETWORK DISTRIBUTED COMPUTING</p><div class="product-wordmark">TASH<span>.</span></div>
+      <p class="lead">A consent-based Master/Worker application that lets devices on the same local network contribute to predefined computation tasks.</p>
+      <div class="actions"><a class="button button-dark" href="https://github.com/YunaBugendai/TASH" target="_blank" rel="noopener">View source on GitHub <span>↗</span></a></div>
+      <p class="small-note">Project status: experimental. Current capabilities and requirements are defined by the public repository.</p>
+    </section>
+    <section class="section section-soft">
+      <div class="container detail-grid">
+        <div><p class="eyebrow">HOW IT WORKS</p><h2>One Master.<br>Several Workers.</h2></div>
+        <div><p>The Master divides a workload into independent chunks and assigns them to Worker applications running on devices in the same local network. Workers connect to the Master and must be explicitly authorized before they participate.</p><p>The current built-in workload is a CPU benchmark that evaluates a predefined function over a range of values. It is not a general-purpose platform for sending arbitrary code to remote machines.</p></div>
+      </div>
+    </section>
+    <section class="section container">
+      <p class="eyebrow">CURRENT CAPABILITIES</p><h2>Built around<br>explicit consent.</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><b>Manual authorization</b><p>A pairing code and an explicit approval step are required before a Worker joins.</p></article>
+        <article class="feature-card"><b>Predefined tasks only</b><p>Workers execute registered task types; the documented design does not execute arbitrary network-supplied code.</p></article>
+        <article class="feature-card"><b>Windows & Linux</b><p>The current Python/Tkinter applications target Windows and Linux desktop environments.</p></article>
+        <article class="feature-card"><b>Pause and cancel</b><p>Workers can pause or disconnect, and the Master can cancel an active computation.</p></article>
+        <article class="feature-card"><b>Benchmarking</b><p>The application compares local execution with distributed execution; network overhead can make small tasks slower.</p></article>
+        <article class="feature-card"><b>Open protocol</b><p>The repository documents the communication protocol and troubleshooting steps.</p></article>
+      </div>
+    </section>
+    <section class="section section-soft">
+      <div class="container detail-grid">
+        <div><p class="eyebrow">LIMITATIONS</p><h2>Know the boundaries.</h2></div>
+        <div><p>TASH is LAN tooling, not a hardened internet-facing service. Do not expose its network ports to the public internet. Local-network discovery depends on network configuration; some guest Wi-Fi networks isolate connected clients.</p><p>Android is not currently supported by the Tkinter application. A native Android Worker would be a separate implementation and is not advertised as available.</p></div>
+      </div>
+    </section>
+    <section class="section container">
+      <p class="eyebrow">PROJECT DOCUMENTATION</p><h2>Read the implementation notes.</h2>
+      <div class="link-list">
+        <a href="https://github.com/YunaBugendai/TASH/blob/main/README.md" target="_blank" rel="noopener"><span><b>README & setup</b><small>Requirements, installation and running Master/Worker</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/TASH/blob/main/PROTOCOL.md" target="_blank" rel="noopener"><span><b>Communication protocol</b><small>Message types, pairing and task lifecycle</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/TASH/blob/main/TROUBLESHOOTING.md" target="_blank" rel="noopener"><span><b>Troubleshooting</b><small>Network discovery, authorization and common issues</small></span><span>↗</span></a>
+      </div>
+    </section>
+  </main>
+  <div data-site-footer></div>
+</body>
+</html>
