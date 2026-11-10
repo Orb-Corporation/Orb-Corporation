@@ -7,6 +7,7 @@
   <meta property="og:title" content="Orb! — Orb Corporation"><meta property="og:description" content="Native performance. Minimal complexity. A systems language built from the ground up.">
   <meta name="twitter:card" content="summary"><title>Orb! — Orb Corporation</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script>
+  <script defer src="/assets/js/orb-playground.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a><div data-site-header></div>
@@ -37,16 +38,30 @@
         <article class="feature-card"><b>Testing</b><p>The repository includes regression checks and a differential fuzzer. Test counts can change as the project evolves.</p></article>
       </div>
     </section>
-    <section class="section section-soft">
+    <section class="section section-soft" id="playground">
       <div class="container">
-        <div class="section-heading"><div><p class="eyebrow">A FIRST LOOK</p><h2>Hello, Orb!</h2></div></div>
-        <pre class="code-sample"><code>fn main() {
-    x := 10;
-    y := 20;
-
-    print(x + y);
-}</code></pre>
-        <p class="small-note">This example follows the syntax shown in the public Orb! repository README.</p>
+        <div class="section-heading">
+          <div><p class="eyebrow">TRY ORB! IN YOUR BROWSER</p><h2>Write your first<br><span class="muted">Hello, World!</span></h2></div>
+        </div>
+        <p class="lead">Change the code, press Run, and see what it prints.</p>
+        <div class="orb-playground">
+          <section class="orb-editor-panel" aria-label="Orb! code editor">
+            <div class="orb-panel-head"><strong>main.orb</strong><span>Orb! source</span></div>
+            <textarea id="orb-editor" class="orb-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="Write Orb! code" aria-describedby="orb-playground-note">fn main() {
+    println("Hello, World!");
+}</textarea>
+            <div class="orb-playground-actions">
+              <button class="orb-run" id="orb-run" type="button">Run code <span aria-hidden="true">▶</span></button>
+              <button class="orb-reset" id="orb-reset" type="button">Reset example</button>
+              <span class="orb-playground-status" id="orb-status" role="status" aria-live="polite">Ready</span>
+            </div>
+          </section>
+          <section class="orb-output-panel" aria-label="Program output">
+            <div class="orb-panel-head"><strong>OUTPUT</strong><span>Browser preview</span></div>
+            <pre class="orb-output" id="orb-output" aria-live="polite">Your program's output will appear here.</pre>
+          </section>
+        </div>
+        <p class="orb-playground-note" id="orb-playground-note"><strong>About this preview:</strong> This lightweight browser runner supports a learning subset of Orb! (a <code>main</code> function, local variables, basic arithmetic, <code>print</code> and <code>println</code>). It is not the native Orb! compiler and does not yet support the full language, type checker, imports or system features. To build and run real Orb! programs, use the compiler from the <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Orb! repository</a>.</p>
       </div>
     </section>
     <section class="section container">
