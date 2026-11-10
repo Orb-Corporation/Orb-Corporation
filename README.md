@@ -7,7 +7,7 @@ Minimal, responsive, multi-page static website for Orb Corporation.
 - `/` Home
 - `/about/` About
 - `/products/` Product catalogue
-- `/products/orb-lang/` Orb! overview
+- `/products/orb-lang/` Orb! overview and browser learning preview
 - `/products/orb-lang/downloads/` Orb! source archive and build notes
 - `/products/tash/` TASH overview
 - `/open-source/` Public repositories
@@ -34,6 +34,8 @@ Create a **Static Site** from this repository. Set Publish Directory to `.` and 
 - `Orb Corporation Orbital Logo-3.png` — shared brand image
 
 The logo is served locally from this repository. The website uses system font stacks and does not need Google Fonts.
+
+The Orb! page includes a small browser-side learning preview for a limited subset of the language. It is not the native Orb! compiler; the native compiler and complete language implementation remain in the Orb! repository.
 
 ## Search indexing
 
