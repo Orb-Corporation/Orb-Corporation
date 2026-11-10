@@ -21,7 +21,7 @@ if (header) {
   header.innerHTML =
     '<header class="site-header"><div class="container nav-wrap">' +
       '<a class="brand" href="/" aria-label="Orb Corporation home">' +
-        '<img class="brand-logo" src="/Orb%20Corporation%20Orbital%20Logo-3.png" alt="Orb Corporation" width="240" height="58">' +
+        '<img class="brand-logo" src="/Orb%20Corporation%20Orbital%20Logo-3.png" alt="Orb Corporation" width="330" height="82">' +
       '</a>' +
       '<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">' +
         '<span></span><span></span>' +
@@ -59,7 +59,7 @@ if (footer) {
   footer.innerHTML =
     '<footer class="site-footer"><div class="container footer-main">' +
       '<div><a class="brand footer-brand" href="/" aria-label="Orb Corporation home">' +
-        '<img class="brand-logo" src="/Orb%20Corporation%20Orbital%20Logo-3.png" alt="Orb Corporation" width="230" height="56">' +
+        '<img class="brand-logo" src="/Orb%20Corporation%20Orbital%20Logo-3.png" alt="Orb Corporation" width="310" height="76">' +
       '</a><p>Free the Internet.</p></div>' +
       '<div class="footer-links">' +
         '<a href="/about/">About</a><a href="/products/">Products</a><a href="/roadmap/">Roadmap</a>' +
