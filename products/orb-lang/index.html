@@ -1,1 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Orb! — Orb Corporation</title><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script></head><body><div data-site-header></div><main><section class="page-hero product-hero container"><p class="eyebrow">A PROGRAMMING LANGUAGE BY ORB CORPORATION</p><div class="product-wordmark">Orb<span>!</span></div><p class="lead">A language project built with independence, capability and the future of the web in mind.</p><div class="actions"><a class="button button-dark" href="/products/orb-lang/downloads/">Downloads <span>↓</span></a><a class="button button-outline" href="#overview">Explore the project</a></div><p class="small-note">Development status: active project. Platform and release availability may change.</p></section><section id="overview" class="section section-soft"><div class="container detail-grid"><div><p class="eyebrow">OVERVIEW</p><h2>One language.<br>Room to grow.</h2></div><div><p>Orb! is Orb Corporation's programming language project. Its current direction includes native execution on Linux x86-64. Browser and WebAssembly integration has been explored as a development direction, but is not presented here as a released capability.</p><p>This page is the home for language documentation, supported targets, releases and development notes.</p></div></div></section><section class="section container"><p class="eyebrow">QUICK LINKS</p><div class="link-list"><a href="/products/orb-lang/downloads/"><span><b>Downloads</b><small>Available builds and installation notes</small></span><span>↓</span></a><a href="/products/"><span><b>All products</b><small>Explore the Orb Corporation ecosystem</small></span><span>→</span></a><a href="/contact/"><span><b>Contact</b><small>Questions and feedback</small></span><span>→</span></a></div></section></main><div data-site-footer></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Orb! is a statically typed systems language compiling .orb source files to native x86-64 Linux executables. Explore its features and documentation.">
+  <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
+  <meta property="og:title" content="Orb! — Orb Corporation"><meta property="og:description" content="Native performance. Minimal complexity. A systems language built from the ground up.">
+  <meta name="twitter:card" content="summary"><title>Orb! — Orb Corporation</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a><div data-site-header></div>
+  <main id="main-content">
+    <section class="page-hero product-hero container">
+      <p class="eyebrow">A PROGRAMMING LANGUAGE BY ORB</p><div class="product-wordmark">Orb<span>!</span></div>
+      <p class="lead">A small, statically typed systems language that compiles <code>.orb</code> source files straight to native x86-64 Linux executables.</p>
+      <div class="actions">
+        <a class="button button-dark" href="/products/orb-lang/downloads/">Downloads <span>↓</span></a>
+        <a class="button button-outline" href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Source code <span>↗</span></a>
+      </div>
+      <p class="small-note">Current target: Linux x86-64. The project is under active development; consult the repository for the current implementation status.</p>
+    </section>
+    <section id="overview" class="section section-soft">
+      <div class="container detail-grid">
+        <div><p class="eyebrow">DESIGN</p><h2>Native output.<br>No virtual machine.</h2></div>
+        <div><p>Orb! compiles directly to native executables. Its compiler is written in C11, while the standard library is written in Orb! and embedded into the compiler. The current design does not rely on a virtual machine, garbage collector or libc.</p><p>The compiler pipeline includes parsing, type checking, intermediate representation, optimisation, register allocation and x86-64 assembly generation. See the architecture document for implementation details.</p></div>
+      </div>
+    </section>
+    <section class="section container">
+      <p class="eyebrow">LANGUAGE FEATURES</p><h2>Small core.<br>Useful building blocks.</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><b>Static types</b><p>Integer and floating-point types, booleans, strings, pointers, arrays, slices, structs and enums.</p></article>
+        <article class="feature-card"><b>Memory control</b><p>Explicit allocation and release, pointers, and no automatic garbage collection.</p></article>
+        <article class="feature-card"><b>Error handling</b><p>Error unions with <code>T!</code>, propagation with <code>try</code>, and handling with <code>catch</code>.</p></article>
+        <article class="feature-card"><b>Generics</b><p>Generic functions and structs with compile-time monomorphisation.</p></article>
+        <article class="feature-card"><b>Standard library</b><p>Core I/O, memory helpers, math, strings, file I/O and a generic vector.</p></article>
+        <article class="feature-card"><b>Testing</b><p>The repository includes regression checks and a differential fuzzer. Test counts can change as the project evolves.</p></article>
+      </div>
+    </section>
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">A FIRST LOOK</p><h2>Hello, Orb!</h2></div></div>
+        <pre class="code-sample"><code>fn main() {
+    x := 10;
+    y := 20;
+
+    print(x + y);
+}</code></pre>
+        <p class="small-note">This example follows the syntax shown in the public Orb! repository README.</p>
+      </div>
+    </section>
+    <section class="section container">
+      <p class="eyebrow">DOCUMENTATION & SOURCE</p><h2>Go deeper.</h2>
+      <div class="link-list">
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/LANGUAGE.md" target="_blank" rel="noopener"><span><b>Language reference</b><small>Syntax, types, statements and error handling</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/STDLIB.md" target="_blank" rel="noopener"><span><b>Standard library</b><small>Built-in modules and functions</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener"><span><b>Compiler architecture</b><small>Compiler stages and implementation notes</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener"><span><b>GitHub repository</b><small>Source code, examples, tests and current limitations</small></span><span>↗</span></a>
+      </div>
+    </section>
+    <section class="cta-band"><div class="container cta-inner"><div><p class="eyebrow">TRY THE PROJECT</p><h2>Explore the source.</h2><p>Build instructions and requirements are maintained in the repository.</p></div><a class="button button-light" href="/products/orb-lang/downloads/">Downloads <span>↗</span></a></div></section>
+  </main>
+  <div data-site-footer></div>
+</body>
+</html>
