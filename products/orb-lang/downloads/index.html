@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Find the Orb! source archive, build requirements and installation instructions for Linux x86-64.">
+  <meta name="description" content="Get Orb! source code, build instructions and platform notes for the 0.2.0 development line.">
   <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
-  <meta property="og:title" content="Downloads — Orb!"><meta property="og:description" content="Source archive and build instructions for Orb!.">
+  <meta property="og:title" content="Downloads — Orb!"><meta property="og:description" content="Source code and build instructions for Orb!.">
   <meta name="twitter:card" content="summary"><title>Downloads — Orb!</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script>
 </head>
@@ -13,26 +13,33 @@
   <main id="main-content">
     <section class="page-hero container">
       <p class="eyebrow"><a href="/products/orb-lang/">ORB!</a> / DOWNLOADS</p><h1>Get <span class="muted">Orb!</span></h1>
-      <p class="lead">The public repository contains a versioned ZIP archive and the complete source tree. Read the build requirements before installing.</p>
+      <p class="lead">The current 0.2.0 development line is available in the source repository. Prebuilt archives still present in the repository are older 0.1.0 packages.</p>
     </section>
     <section class="section section-soft">
       <div class="container narrow">
         <div class="download-card">
-          <div><p class="eyebrow">REPOSITORY ARCHIVE</p><h2>Orb! 0.1.0</h2><p>ZIP package published in the source repository. Check the repository README for the exact contents and current instructions.</p></div>
-          <a class="button button-dark" href="https://raw.githubusercontent.com/YunaBugendai/Orb-/main/orb-0.1.0.zip">Download ZIP <span>↓</span></a>
+          <div><p class="eyebrow">CURRENT SOURCE</p><h2>Orb! 0.2.0 · main</h2><p>Download the current source tree as a ZIP archive, or clone the repository. Build requirements vary by target.</p></div>
+          <a class="button button-dark" href="https://github.com/YunaBugendai/Orb-/archive/refs/heads/main.zip">Download source <span>↓</span></a>
         </div>
-        <h2 class="subheading">Build requirements</h2>
-        <ul class="plain-list"><li>Linux x86-64</li><li>A C compiler to build the compiler</li><li>GNU binutils (<code>as</code> and <code>ld</code>) to assemble and link programs</li><li><code>make</code> for the documented build workflow</li></ul>
+        <div class="link-list">
+          <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener"><span><b>Source repository</b><small>Latest compiler source, examples, tests and documentation</small></span><span>↗</span></a>
+          <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/PLATFORMS.md" target="_blank" rel="noopener"><span><b>Platform installation guide</b><small>Linux, Windows / WSL2, native Windows and macOS notes</small></span><span>↗</span></a>
+        </div>
         <h2 class="subheading">Build from source</h2>
         <pre class="code-sample"><code>make
 make test
+orb doctor
 orb run examples/hello.orb</code></pre>
-        <p>The repository README contains optional installation steps and additional compiler commands. The current native target is Linux x86-64; this page does not advertise native Windows or macOS builds.</p>
-        <div class="notice"><b>Experimental software</b><p>Orb! is under active development. Review the known limitations and test the compiler in an environment appropriate for development work before relying on it.</p></div>
-        <div class="link-list">
-          <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener"><span><b>Source repository</b><small>Build instructions, tests and source code</small></span><span>↗</span></a>
-          <a href="https://github.com/YunaBugendai/Orb-/blob/main/README.md" target="_blank" rel="noopener"><span><b>Full README</b><small>Quick start, features and known limitations</small></span><span>↗</span></a>
-        </div>
+        <p>Requirements: a C compiler and the platform's assembler/linker. Linux uses GNU binutils; macOS uses Xcode command line tools; native Windows uses MSYS2 / MinGW-w64. See the platform guide before choosing a target.</p>
+        <h2 class="subheading">Platform status</h2>
+        <div class="download-row"><div><b>Linux x86-64</b><small>Fully supported and tested</small></div><span class="status status-dev">Supported</span></div>
+        <div class="download-row"><div><b>Windows via WSL2</b><small>Recommended Windows workflow, running the Linux compiler inside WSL2</small></div><span class="status status-dev">Supported workflow</span></div>
+        <div class="download-row"><div><b>Native Windows / macOS</b><small>Experimental targets; not executed on real Windows/macOS hardware according to project documentation</small></div><span class="status status-planned">Experimental</span></div>
+        <h2 class="subheading">Older 0.1.0 packages</h2>
+        <p>The repository currently contains these older artifacts. They are not the current 0.2.0 source package:</p>
+        <div class="download-row"><div><b>Orb! 0.1.0 source ZIP</b><small>Older archive from the repository</small></div><a class="text-link" href="https://raw.githubusercontent.com/YunaBugendai/Orb-/main/orb-0.1.0.zip">Download <span>↓</span></a></div>
+        <div class="download-row"><div><b>Orb! VS Code extension 0.1.0</b><small>Prebuilt VSIX in the repository; extension source and docs may be newer</small></div><a class="text-link" href="https://raw.githubusercontent.com/YunaBugendai/Orb-/main/dist/orb-lang-0.1.0.vsix">Download <span>↓</span></a></div>
+        <div class="notice"><b>Experimental software</b><p>Orb! is under active development. Review the platform limitations and test the compiler in an appropriate development environment before relying on it. The website does not currently claim a 0.2.0 prebuilt installer or VSIX.</p></div>
       </div>
     </section>
   </main>
