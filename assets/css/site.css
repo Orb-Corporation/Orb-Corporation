@@ -60,3 +60,17 @@
 .orb-playground-note{font-size:12px;color:#777;line-height:1.7;margin-top:15px;max-width:820px}
 .orb-playground-note strong{color:#333}
 @media(max-width:850px){.orb-playground{grid-template-columns:1fr}.orb-editor,.orb-output{min-height:230px}}
+
+
+/* Platform support and long-term goal layouts */
+.platform-list{border-top:1px solid var(--line);margin-top:26px}
+.platform-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}
+.platform-row>div{display:flex;flex-direction:column;gap:3px}
+.platform-row b{font-size:14px}
+.platform-row small{font-size:12px;color:#888;max-width:580px}
+.goal-item{padding:20px 0;border-bottom:1px solid var(--line)}
+.goal-item>b{font-size:16px}
+.goal-item>p{font-size:14px;color:#666;line-height:1.75;margin:8px 0 12px}
+.project-pipeline .doc-card{min-height:230px}
+.project-pipeline .status{margin-bottom:8px}
+@media(max-width:700px){.platform-row{align-items:flex-start;flex-direction:column;gap:9px}.project-pipeline .doc-card{min-height:170px}}
