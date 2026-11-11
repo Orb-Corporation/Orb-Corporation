@@ -20,6 +20,7 @@ Minimal, responsive, multi-page static website for Orb Corporation.
 - `/contribute/` Contribution guide
 - `/legal/` Privacy and general notice
 - `/contact/` Contact channels
+- `/support/` Voluntary support information and Ko-fi link placeholder
 
 ## Local preview
 
