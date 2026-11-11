@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Universal File Viewer is an Orb desktop prototype for identifying and inspecting files, including unfamiliar formats.">
+  <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
+  <meta property="og:title" content="Universal File Viewer — Orb Corporation"><meta property="og:description" content="Inspect file types, metadata, text and raw hexadecimal data.">
+  <meta name="twitter:card" content="summary"><title>Universal File Viewer — Orb Corporation</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css"><script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a><div data-site-header></div>
+  <main id="main-content">
+    <section class="page-hero product-hero container">
+      <p class="eyebrow">DESKTOP FILE INSPECTION</p><div class="product-wordmark">Universal<br><span>File Viewer</span></div>
+      <p class="lead">A desktop utility prototype for identifying and inspecting known, unfamiliar and extension-mismatched files.</p>
+      <p class="small-note"><span class="status status-dev">Prototype</span> &nbsp; Estimated target: January 2027. The date may change.</p>
+    </section>
+    <section class="section section-soft"><div class="container detail-grid">
+      <div><p class="eyebrow">PURPOSE</p><h2>Look inside<br>the file.</h2></div>
+      <div><p>Universal File Viewer is designed to help users understand what a file contains, especially when its extension is missing, misleading or unfamiliar.</p><p>The current prototype is a Python desktop application built with PySide6. It focuses on inspection and does not execute the files it opens.</p></div>
+    </div></section>
+    <section class="section container">
+      <p class="eyebrow">PROTOTYPE CAPABILITIES</p><h2>Inspect before you guess.</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><b>Format detection</b><p>Uses file signatures (magic bytes), not just the filename extension, to help identify formats.</p></article>
+        <article class="feature-card"><b>Metadata</b><p>Displays basic information about the selected file and its detected type.</p></article>
+        <article class="feature-card"><b>Text preview</b><p>Attempts common text encodings such as UTF-8, UTF-16 and ASCII when a text view is appropriate.</p></article>
+        <article class="feature-card"><b>Hex viewer</b><p>Provides a lazy, chunked hexadecimal view for inspecting raw file contents.</p></article>
+        <article class="feature-card"><b>Container awareness</b><p>Distinguishes several ZIP-based formats, including Office documents and package files.</p></article>
+        <article class="feature-card"><b>File analysis</b><p>Includes preliminary entropy and printable-character analysis for unfamiliar data.</p></article>
+      </div>
+      <div class="notice"><b>Prototype, not a public release.</b><p>There is no public download on this page yet. Supported formats, platform compatibility, reliability and the final interface are still subject to development and testing.</p></div>
+      <a class="text-link" href="/roadmap/">View the project roadmap <span>→</span></a>
+    </section>
+  </main>
+  <div data-site-footer></div>
+</body>
+</html>
