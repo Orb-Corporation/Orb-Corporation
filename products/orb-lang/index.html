@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Orb! is a statically typed systems language compiling .orb source files to native x86-64 Linux executables. Explore its features and documentation.">
+  <meta name="description" content="Orb! 0.2.0 is a statically typed systems language with native x86-64 code generation, Linux support, experimental Windows/macOS targets and Visual Studio Code tooling.">
   <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
   <meta property="og:title" content="Orb! — Orb Corporation"><meta property="og:description" content="Native performance. Minimal complexity. A systems language built from the ground up.">
   <meta name="twitter:card" content="summary"><title>Orb! — Orb Corporation</title>
@@ -14,19 +14,24 @@
   <main id="main-content">
     <section class="page-hero product-hero container">
       <p class="eyebrow">A PROGRAMMING LANGUAGE BY ORB</p><div class="product-wordmark">Orb<span>!</span></div>
-      <p class="lead">A small, statically typed systems language that compiles <code>.orb</code> source files straight to native x86-64 Linux executables.</p>
+      <p class="lead">A small, statically typed systems language that compiles <code>.orb</code> source files to native x86-64 executables.</p>
       <div class="actions">
         <a class="button button-dark" href="/products/orb-lang/downloads/">Downloads <span>↓</span></a>
         <a class="button button-outline" href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Source code <span>↗</span></a>
       </div>
-      <p class="small-note">Current target: Linux x86-64. The project is under active development; consult the repository for the current implementation status.</p>
+      <p class="small-note">Current development line: 0.2.0. Linux x86-64 is fully supported and tested; Windows and macOS support remain experimental.</p>
     </section>
+
     <section id="overview" class="section section-soft">
       <div class="container detail-grid">
         <div><p class="eyebrow">DESIGN</p><h2>Native output.<br>No virtual machine.</h2></div>
-        <div><p>Orb! compiles directly to native executables. Its compiler is written in C11, while the standard library is written in Orb! and embedded into the compiler. The current design does not rely on a virtual machine, garbage collector or libc.</p><p>The compiler pipeline includes parsing, type checking, intermediate representation, optimisation, register allocation and x86-64 assembly generation. See the architecture document for implementation details.</p></div>
+        <div>
+          <p>Orb! compiles directly to native x86-64 executables. The compiler is written in dependency-free C11; its standard library is written in Orb! itself. The Linux runtime uses direct system calls and does not link against libc. The Windows and macOS targets use their platform-specific system interfaces and toolchains.</p>
+          <p>The compiler pipeline includes parsing, type checking, intermediate representation, optimisation, register allocation and target-specific assembly generation.</p>
+        </div>
       </div>
     </section>
+
     <section class="section container">
       <p class="eyebrow">LANGUAGE FEATURES</p><h2>Small core.<br>Useful building blocks.</h2>
       <div class="feature-grid">
@@ -34,15 +39,36 @@
         <article class="feature-card"><b>Memory control</b><p>Explicit allocation and release, pointers, and no automatic garbage collection.</p></article>
         <article class="feature-card"><b>Error handling</b><p>Error unions with <code>T!</code>, propagation with <code>try</code>, and handling with <code>catch</code>.</p></article>
         <article class="feature-card"><b>Generics</b><p>Generic functions and structs with compile-time monomorphisation.</p></article>
-        <article class="feature-card"><b>Standard library</b><p>Core I/O, memory helpers, math, strings, file I/O and a generic vector.</p></article>
-        <article class="feature-card"><b>Testing</b><p>The repository includes regression checks and a differential fuzzer. Test counts can change as the project evolves.</p></article>
+        <article class="feature-card"><b>Standard library</b><p>Core I/O, memory helpers, math, strings, file I/O, vectors and target-specific OS layers.</p></article>
+        <article class="feature-card"><b>Compiler tooling</b><p>Diagnostics, <code>orb doctor</code>, command-line target selection and a Visual Studio Code extension.</p></article>
       </div>
     </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">PLATFORM SUPPORT</p><h2>One language.<br>Different targets.</h2></div></div>
+        <div class="platform-list">
+          <div class="platform-row"><div><b>Linux x86-64</b><small>Native toolchain and runtime</small></div><span class="status status-dev">Fully supported · tested</span></div>
+          <div class="platform-row"><div><b>Windows via WSL2</b><small>Recommended Windows workflow; uses the supported Linux build inside WSL2</small></div><span class="status status-dev">Supported workflow</span></div>
+          <div class="platform-row"><div><b>Native Windows x86-64</b><small>Experimental <code>.exe</code> target through MSYS2 / MinGW-w64</small></div><span class="status status-planned">Experimental</span></div>
+          <div class="platform-row"><div><b>macOS x86-64</b><small>Experimental target; Apple Silicon runs x86-64 output through Rosetta 2</small></div><span class="status status-planned">Experimental</span></div>
+        </div>
+        <p class="small-note">The native Windows and macOS outputs have been generated and checked for assembly, but the project documentation states they have not been executed on real Windows/macOS hardware. A native Apple Silicon arm64 backend is not implemented.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-heading"><div><p class="eyebrow">DEVELOPER EXPERIENCE</p><h2>More than a compiler.</h2></div></div>
+      <div class="feature-grid">
+        <article class="feature-card"><b>VS Code integration</b><p>Syntax highlighting, snippets, run/build/check commands, inline diagnostics, tasks and WSL support.</p></article>
+        <article class="feature-card"><b>Toolchain diagnostics</b><p><code>orb doctor</code> checks the local compiler toolchain and runs a small test program.</p></article>
+        <article class="feature-card"><b>Target selection</b><p><code>--target linux|macos|windows</code> selects a code-generation target; runnable targets depend on the host environment.</p></article>
+      </div>
+    </section>
+
     <section class="section section-soft" id="playground">
       <div class="container">
-        <div class="section-heading">
-          <div><p class="eyebrow">TRY ORB! IN YOUR BROWSER</p><h2>Write your first<br><span class="muted">Hello, World!</span></h2></div>
-        </div>
+        <div class="section-heading"><div><p class="eyebrow">TRY ORB! IN YOUR BROWSER</p><h2>Write your first<br><span class="muted">Hello, World!</span></h2></div></div>
         <p class="lead">Change the code, press Run, and see what it prints.</p>
         <div class="orb-playground">
           <section class="orb-editor-panel" aria-label="Orb! code editor">
@@ -61,14 +87,29 @@
             <pre class="orb-output" id="orb-output" aria-live="polite">Your program's output will appear here.</pre>
           </section>
         </div>
-        <p class="orb-playground-note" id="orb-playground-note"><strong>About this preview:</strong> This lightweight browser runner supports a learning subset of Orb! (a <code>main</code> function, local variables, basic arithmetic, <code>print</code> and <code>println</code>). It is not the native Orb! compiler and does not yet support the full language, type checker, imports or system features. To build and run real Orb! programs, use the compiler from the <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Orb! repository</a>.</p>
+        <p class="orb-playground-note" id="orb-playground-note"><strong>About this preview:</strong> This lightweight browser runner supports a learning subset of Orb! (a <code>main</code> function, local variables, basic arithmetic, <code>print</code> and <code>println</code>). It is not the native Orb! 0.2.0 compiler and does not yet support the full language, type checker, imports or system features. To build and run real Orb! programs, use the compiler from the <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Orb! repository</a>.</p>
       </div>
     </section>
+
+    <section class="section section-soft">
+      <div class="container detail-grid">
+        <div><p class="eyebrow">LONG-TERM GOALS</p><h2>Systems today.<br>Web tomorrow.</h2></div>
+        <div>
+          <p>Orb! is intended to grow beyond its current systems-programming focus. Two major development goals guide its longer-term direction:</p>
+          <div class="goal-item"><b>Web development library</b><p>Build a first-party library that lets developers use Orb! in web development and interact with browser capabilities, while working alongside web standards such as HTML and CSS.</p><span class="status status-planned">Future goal</span></div>
+          <div class="goal-item"><b>Higher performance and efficiency</b><p>Improve code generation, optimisation and runtime efficiency, with the long-term ambition of outperforming C++ in carefully defined, reproducible benchmark workloads.</p><span class="status status-planned">Long-term ambition</span></div>
+          <p class="small-note">These are development goals, not current capabilities or performance claims. The public benchmark notes in the repository describe the compiler's present limitations and measured results.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section container">
       <p class="eyebrow">DOCUMENTATION & SOURCE</p><h2>Go deeper.</h2>
       <div class="link-list">
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/README.md" target="_blank" rel="noopener"><span><b>README & quick start</b><small>Current features, build instructions and known limitations</small></span><span>↗</span></a>
         <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/LANGUAGE.md" target="_blank" rel="noopener"><span><b>Language reference</b><small>Syntax, types, statements and error handling</small></span><span>↗</span></a>
-        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/STDLIB.md" target="_blank" rel="noopener"><span><b>Standard library</b><small>Built-in modules and functions</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/PLATFORMS.md" target="_blank" rel="noopener"><span><b>Platform support notes</b><small>Linux, Windows, macOS and toolchain setup</small></span><span>↗</span></a>
+        <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/VSCODE.md" target="_blank" rel="noopener"><span><b>Visual Studio Code guide</b><small>Install and use the Orb! editor extension</small></span><span>↗</span></a>
         <a href="https://github.com/YunaBugendai/Orb-/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener"><span><b>Compiler architecture</b><small>Compiler stages and implementation notes</small></span><span>↗</span></a>
         <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener"><span><b>GitHub repository</b><small>Source code, examples, tests and current limitations</small></span><span>↗</span></a>
       </div>
