@@ -13,15 +13,17 @@
 
 <section class="section section-soft"><div class="container">
 <div class="roadmap-item">
-  <div class="roadmap-head"><div><p class="eyebrow">PROGRAMMING LANGUAGE</p><h2>Orb!</h2></div><span class="status status-dev">0.2.0 · Released</span></div>
+  <div class="roadmap-head"><div><p class="eyebrow">PROGRAMMING LANGUAGE</p><h2>Orb!</h2></div><span class="status status-dev">0.3.0 · On main</span></div>
   <p>Orb! is evolving from a Linux-focused native systems language toward a compiler with additional platform targets and better developer tooling.</p>
-  <p class="target-date">Latest release: 11 November 2026 (version 0.2.0).</p>
+  <p class="target-date">Current main version: 0.3.0 (merged 14 November 2026). Official release publication is still pending.</p>
   <ul class="plain-list">
     <li>Linux x86-64: fully supported and tested.</li>
     <li>Windows via WSL2: recommended Windows workflow, using the Linux compiler in WSL2.</li>
     <li>Native Windows x86-64 and macOS x86-64: experimental targets, not yet executed on real Windows/macOS hardware.</li>
-    <li>VS Code support includes syntax highlighting, snippets, run/build/check commands, diagnostics, tasks and WSL integration.</li>
-    <li><code>orb doctor</code> and <code>--target linux|macos|windows</code> improve toolchain diagnosis and target selection.</li>
+    <li>VS Code support includes syntax highlighting, snippets, completions, hover documentation, signature help, run/build/check commands, diagnostics, tasks and WSL integration.</li>
+    <li>The <code>orb pkg</code> package manager installs and verifies source-only modules from public GitHub repositories using a lockfile.</li>
+    <li>The standard library includes JSON validation and string quoting, alongside the existing core, math, strings, I/O and vector modules.</li>
+    <li><code>orb doctor</code>, improved module-member typo suggestions and <code>--target linux|macos|windows</code> improve toolchain diagnosis and target selection.</li>
   </ul>
   <a class="text-link" href="/products/orb-lang/">Orb! project page <span>→</span></a>
 </div>
@@ -35,10 +37,23 @@
 </div>
 
 <div class="roadmap-item">
-  <div class="roadmap-head"><div><p class="eyebrow">LONG-TERM LANGUAGE GOALS</p><h2>Orb! beyond systems.</h2></div><span class="status status-planned">Long term</span></div>
-  <div class="goal-item"><b>1. Web development library</b><p>Develop a first-party web development library so Orb! can be used to build web applications and interact with browser capabilities, alongside standards such as HTML and CSS.</p><span class="target-date">Estimated target: 13 November 2026.</span></div>
-  <div class="goal-item"><b>2. Performance and efficiency</b><p>Improve the compiler's optimiser, code generation and runtime efficiency, with the ambition of outperforming C++ on clearly defined, reproducible workloads.</p><span class="target-date">Estimated target: sometime in 2027.</span></div>
-  <p class="small-note">These are goals, not features that have shipped. The current public benchmark notes still describe optimisation limitations; performance claims will require repeatable comparisons under fair compiler settings.</p>
+  <div class="roadmap-head"><div><p class="eyebrow">DELIVERED LANGUAGE CAPABILITY</p><h2>Web Development Library</h2></div><span class="status status-dev">Implemented</span></div>
+  <p>Orb! now includes a first-party browser integration library for WebAssembly applications. It lets Orb! code work with browser APIs while HTML and CSS remain the page structure and styling standards.</p>
+  <p class="target-date">Delivered: 14 November 2026 · included in the 0.3.0 code line.</p>
+  <ul class="plain-list">
+    <li>DOM lookup and manipulation, element properties, attributes, classes and styles.</li>
+    <li>Browser events, callbacks, timers and console output.</li>
+    <li>Local/session storage, URL and location access, and asynchronous browser fetch.</li>
+    <li>JSON parsing, construction and serialisation through the browser integration runtime.</li>
+  </ul>
+  <a class="text-link" href="/products/orb-lang/">Orb! project page <span>→</span></a>
+</div>
+
+<div class="roadmap-item">
+  <div class="roadmap-head"><div><p class="eyebrow">NEXT LONG-TERM LANGUAGE GOAL</p><h2>Performance and efficiency.</h2></div><span class="status status-planned">Long term</span></div>
+  <p>Improve the compiler's optimiser, code generation and runtime efficiency, with the ambition of outperforming C++ on clearly defined, reproducible workloads.</p>
+  <p class="target-date">Estimated target: during 2027.</p>
+  <p class="small-note">This remains an ambition, not a current performance claim. Results will require repeatable comparisons under fair compiler settings.</p>
 </div>
 
 <div class="notice"><b>All roadmap dates are estimates.</b><p>Targets may move earlier or later as scope, implementation and testing evolve. “TBD” means no target date has been set. A target date is not a guarantee that a project or feature will ship on that date.</p></div>
