@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Orb! 0.2.0 is a statically typed systems language with native x86-64 code generation, Linux support, experimental Windows/macOS targets and Visual Studio Code tooling.">
+  <meta name="description" content="Orb! 0.3.0 adds JSON standard-library utilities, a source package manager and expanded Visual Studio Code tooling to a statically typed systems language with native x86-64 code generation and a browser WebAssembly library.">
   <meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:site_name" content="Orb Corporation">
   <meta property="og:url" content="https://orb-corporation.onrender.com/products/orb-lang/">
   <link rel="canonical" href="https://orb-corporation.onrender.com/products/orb-lang/">
@@ -21,7 +21,7 @@
         <a class="button button-dark" href="/products/orb-lang/downloads/">Downloads <span>↓</span></a>
         <a class="button button-outline" href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Source code <span>↗</span></a>
       </div>
-      <p class="small-note">Latest release: 0.2.0 (11 November 2026). Linux x86-64 is fully supported and tested; Windows and macOS support remain experimental.</p>
+      <p class="small-note">Current main version: 0.3.0 (merged 14 November 2026). Official release assets are pending publication. Linux x86-64 is fully supported and tested; native Windows and macOS targets remain experimental.</p>
     </section>
 
     <section id="overview" class="section section-soft">
@@ -41,8 +41,9 @@
         <article class="feature-card"><b>Memory control</b><p>Explicit allocation and release, pointers, and no automatic garbage collection.</p></article>
         <article class="feature-card"><b>Error handling</b><p>Error unions with <code>T!</code>, propagation with <code>try</code>, and handling with <code>catch</code>.</p></article>
         <article class="feature-card"><b>Generics</b><p>Generic functions and structs with compile-time monomorphisation.</p></article>
-        <article class="feature-card"><b>Standard library</b><p>Core I/O, memory helpers, math, strings, file I/O, vectors and target-specific OS layers.</p></article>
-        <article class="feature-card"><b>Compiler tooling</b><p>Diagnostics, <code>orb doctor</code>, command-line target selection and a Visual Studio Code extension.</p></article>
+        <article class="feature-card"><b>Standard library</b><p>Core I/O, memory helpers, math, strings, file I/O, vectors, JSON utilities and target-specific OS layers.</p></article>
+        <article class="feature-card"><b>Web Development Library</b><p>A browser integration module for WebAssembly apps: DOM access, events, timers, storage, URL/location, asynchronous fetch and JSON APIs. HTML and CSS stay standard web technologies.</p></article>
+        <article class="feature-card"><b>Compiler tooling</b><p>Diagnostics, nearby-name suggestions, <code>orb doctor</code>, the <code>orb pkg</code> package manager, command-line target selection and expanded Visual Studio Code intelligence.</p></article>
       </div>
     </section>
 
@@ -62,7 +63,7 @@
     <section class="section container">
       <div class="section-heading"><div><p class="eyebrow">DEVELOPER EXPERIENCE</p><h2>More than a compiler.</h2></div></div>
       <div class="feature-grid">
-        <article class="feature-card"><b>VS Code integration</b><p>Syntax highlighting, snippets, run/build/check commands, inline diagnostics, tasks and WSL support.</p></article>
+        <article class="feature-card"><b>VS Code integration</b><p>Syntax highlighting, snippets, completion, hover documentation, signature help, run/build/check commands, inline diagnostics, tasks and WSL support.</p></article>
         <article class="feature-card"><b>Toolchain diagnostics</b><p><code>orb doctor</code> checks the local compiler toolchain and runs a small test program.</p></article>
         <article class="feature-card"><b>Target selection</b><p><code>--target linux|macos|windows</code> selects a code-generation target; runnable targets depend on the host environment.</p></article>
       </div>
@@ -89,18 +90,17 @@
             <pre class="orb-output" id="orb-output" aria-live="polite">Your program's output will appear here.</pre>
           </section>
         </div>
-        <p class="orb-playground-note" id="orb-playground-note"><strong>About this preview:</strong> This lightweight browser runner supports a learning subset of Orb! (a <code>main</code> function, local variables, basic arithmetic, <code>print</code> and <code>println</code>). It is not the native Orb! 0.2.0 compiler and does not yet support the full language, type checker, imports or system features. To build and run real Orb! programs, use the compiler from the <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Orb! repository</a>.</p>
+        <p class="orb-playground-note" id="orb-playground-note"><strong>About this preview:</strong> This lightweight browser runner supports a learning subset of Orb! (a <code>main</code> function, local variables, basic arithmetic, <code>print</code> and <code>println</code>). It is not the native Orb! 0.3.0 compiler and does not yet support the full language, type checker, imports or system features. To build and run real Orb! programs, use the compiler from the <a href="https://github.com/YunaBugendai/Orb-" target="_blank" rel="noopener">Orb! repository</a>.</p>
       </div>
     </section>
 
     <section class="section section-soft">
       <div class="container detail-grid">
-        <div><p class="eyebrow">LONG-TERM GOALS</p><h2>Systems today.<br>Web tomorrow.</h2></div>
+        <div><p class="eyebrow">NEXT LONG-TERM GOAL</p><h2>Build on the<br>systems core.</h2></div>
         <div>
-          <p>Orb! is intended to grow beyond its current systems-programming focus. Two major development goals guide its longer-term direction:</p>
-          <div class="goal-item"><b>Web development library</b><p>Build a first-party library that lets developers use Orb! in web development and interact with browser capabilities, while working alongside web standards such as HTML and CSS.</p><span class="target-date">Estimated target: 13 November 2026.</span><span class="status status-planned">Future goal</span></div>
-          <div class="goal-item"><b>Higher performance and efficiency</b><p>Improve code generation, optimisation and runtime efficiency, with the long-term ambition of outperforming C++ in carefully defined, reproducible benchmark workloads.</p><span class="target-date">Estimated target: sometime in 2027.</span><span class="status status-planned">Long-term ambition</span></div>
-          <p class="small-note">These are development goals, not current capabilities or performance claims. The public benchmark notes in the repository describe the compiler's present limitations and measured results.</p>
+          <p>The browser Web Development Library is now available as part of Orb!'s WebAssembly toolchain. The next major long-term goal is compiler and runtime performance:</p>
+          <div class="goal-item"><b>Higher performance and efficiency</b><p>Improve code generation, optimisation and runtime efficiency, with the long-term ambition of outperforming C++ in carefully defined, reproducible benchmark workloads.</p><span class="target-date">Estimated target: during 2027.</span><span class="status status-planned">Long-term ambition</span></div>
+          <p class="small-note">This is a development ambition, not a current performance claim. The public benchmark notes in the repository describe the compiler's present limitations and measured results.</p>
         </div>
       </div>
     </section>
