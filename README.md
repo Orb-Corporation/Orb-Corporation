@@ -11,6 +11,7 @@ Minimal, responsive, multi-page static website for Orb Corporation.
 - `/products/orb-lang/downloads/` Orb! source archive and build notes
 - `/products/tash/` TASH overview
 - `/products/easy-file-transportation/` Easy File Transportation project overview
+- `/products/flow/` Flow visual workflow builder prototype overview
 - `/products/filerora/` Filerora project overview
 - `/products/universal-file-viewer/` Universal File Viewer prototype overview
 - `/open-source/` Public repositories
