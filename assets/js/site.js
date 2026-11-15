@@ -66,7 +66,7 @@ if (footer) {
         '<a href="/docs/">Docs</a><a href="/updates/">Updates</a><a href="/open-source/">Open source</a>' +
         '<a href="/contribute/">Contribute</a><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/legal/">Privacy & legal</a>' +
         '<a href="mailto:orbcorporation@proton.me">Email ↗</a>' +
-        '<a href="https://github.com/YunaBugendai" target="_blank" rel="noopener">GitHub ↗</a>' +
+        '<a href="https://github.com/Orb-Corporation" target="_blank" rel="noopener">GitHub ↗</a>' +
       '</div>' +
     '</div><div class="container footer-bottom"><span>© ' + new Date().getFullYear() + ' Orb Corporation</span><span>Independent technology venture</span></div></footer>';
 }
